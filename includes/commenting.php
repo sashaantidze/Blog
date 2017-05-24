@@ -1,8 +1,3 @@
- <!-- Blog Comments -->
-                
-            
-			
-
                <?php
 //				$username = '';
 //				$user_email = '';
@@ -73,12 +68,7 @@
                         <button type="submit" name="create_comment" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
-                
-                
-                
-                <!-- Posted Comments -->
-                
-                
+     
                 <?php
 				$res = 0;
 				$query = "SELECT * FROM comments WHERE comment_post_id = {$the_post_id} ";
@@ -193,9 +183,6 @@
 							
 					<?php	} ?>
 		
-						
-
-
 					</div>
 					
 					

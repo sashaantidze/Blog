@@ -1,0 +1,57 @@
+/*!
+ * Start Bootstrap - Blog Home (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+footer {
+    margin: 50px 0;
+}
+
+.pager li .active_link{
+	background: #000 !important;
+}
+
+#main_bg{
+	background-color:red;
+	background-image: url(../images/06%20-%20November%202016%20.jpg);
+	background-size: cover;
+	height:600px;
+	margin-top: -19px;
+}
+
+#post_bg{
+	background-color:red;
+/*	background-image: url(../images/aug.jpg);*/
+	background-size: cover;
+	height:600px;
+	margin-top: -19px;
+}
+
+#main_bg h1{
+	margin-top: 160px;
+    font-family: serif;
+    font-weight: 100;
+    font-size: 160px;
+    letter-spacing: 24px;
+   	color: burlywood;
+}
+
+#post_bg h1{
+    font-family: serif;
+    font-weight: 100;
+    font-size: 160px;
+    letter-spacing: 24px;
+   	color: burlywood;
+}
+
+hr.ruler{
+	max-width:100px;
+	margin:15px auto;
+	border-width:4px;
+	border-color:burlywood;
+}

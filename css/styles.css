@@ -1,0 +1,8 @@
+.pager li .active_link{
+	background: #666 !important;
+	color: #fff;
+}
+
+.reply-comm{
+    margin-left: 75px;
+}

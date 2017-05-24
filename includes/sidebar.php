@@ -19,16 +19,16 @@
                     <h4>Login</h4>
                     <form action="includes/login.php" method="post">
                     	<div class="form-group">
-							<input name="username" placeholder="Username" type="text" class="form-control">
+			<input name="username" placeholder="Username" type="text" class="form-control">
 							
                     	</div>
                     	<div class="input-group">
-							<input name="password" placeholder="Password" type="password" class="form-control">
-							<span class="input-group-btn">
-								<button class="btn btn-primary" name="login" type="submit">
-									Login
-								</button>
-							</span>
+				<input name="password" placeholder="Password" type="password" class="form-control">
+				<span class="input-group-btn">
+					<button class="btn btn-primary" name="login" type="submit">
+						Login
+					</button>
+				</span>
 							
                     	</div>
                     </form>
@@ -70,16 +70,16 @@
 						<div class="well well-sm" id="profile" style="display:none;">
 							<div class="row">
 								<div class="col-sm-6 col-md-4">
-									<?php
+								<?php
 					
-										if(!empty($user_image)){
-											echo "<img src='images/$user_image' alt='' title='Change Photo' width='380' height='500' class='img-rounded img-responsive' data-toggle='modal' data-target='#myModal'>";
-										}
-										else if(empty($user_image)){
-											echo "<img src='http://placehold.it/380x500' alt='' title='Upload Photo' class='img-rounded img-responsive' data-toggle='modal' data-target='#myModal'>";
-										}
+								if(!empty($user_image)){
+									echo "<img src='images/$user_image' alt='' title='Change Photo' width='380' height='500' class='img-rounded img-responsive' data-toggle='modal' data-target='#myModal'>";
+								}
+								else if(empty($user_image)){
+									echo "<img src='http://placehold.it/380x500' alt='' title='Upload Photo' class='img-rounded img-responsive' data-toggle='modal' data-target='#myModal'>";
+								}
 
-										?>
+								?>
 									
 								</div>
 								
@@ -111,22 +111,7 @@
 
 									</div>
 								  </div>
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
+							
 								<div class="col-sm-6 col-md-8">
 									<h4>
 										<?php

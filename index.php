@@ -6,9 +6,7 @@ $(document).ready(function () {
 	$('#searchBox').hide();
 	$(window).on('load', function () {
 		$('#intro').delay(2000).fadeOut('medium', function () {
-			$('#searchBox').fadeIn('medium', function () {
-				$('.ruler').fadeOut('slow');
-			});
+			$('#searchBox').fadeIn('medium')
 		});
 		
 	});
@@ -42,7 +40,6 @@ $(document).ready(function () {
     
     
     	<h1 id="intro">Blog</h1>
-    	<hr class="ruler">
     </div>
 
     <!-- Page Content -->

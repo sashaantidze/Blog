@@ -3,35 +3,41 @@
 <?php include 'includes/navigation.php'; ?>   
 <script>
 $(document).ready(function () {
-	$('#searchBox').hide();
+	//$('#searchBox').hide();
+	var searchBoxvar = "<div class='well' id='searchBox'>" +
+                    "<form action='search.php' method='post'>" +
+                    	"<div class='input-group'>" +
+							"<input name='search' placeholder='Search Blog' type='text' class='form-control'>" +
+							"<span class='input-group-btn'>" +
+								"<button name='submit' class='btn btn-default' type='submit'>" +
+									"<span class='glyphicon glyphicon-search'></span>" +
+								"</button>" +
+                        	"</span>" +
+                    	"</div>" +
+                    "</form>" +
+              
+               " </div>	";
+
 	$(window).on('load', function () {
-		$('#intro').delay(2000).fadeOut('medium', function () {
-			$('#searchBox').fadeIn('medium')
+			$('#intro').delay(1000).fadeOut('medium', function () {
+				$('#searchBox').append(searchBoxvar).hide().fadeIn('fast');
+			});
+		
 		});
 		
 	});
-});
+	
+	
 
 </script>  
     
 
     <div class="container-fluid text-center" id="main_bg">
-    
-    <div class="container" style="margin-top: 160px;">
+    	<h1 id="intro">The Blog</h1>
+    <div class="container">
     	<div class="well" id="searchBox">
-                    <h4>Blog Search</h4>
-                    <form action="search.php" method="post">
-                    	<div class="input-group">
-							<input name="search" placeholder="Search Blog" type="text" class="form-control">
-							<span class="input-group-btn">
-								<button name="submit" class="btn btn-default" type="submit">
-									<span class="glyphicon glyphicon-search"></span>
-								</button>
-                        	</span>
-                    	</div>
-                    </form>
-                    <!-- /.input-group -->
-                </div>
+    		
+    	</div>
     </div>
     
     
@@ -39,7 +45,7 @@ $(document).ready(function () {
     
     
     
-    	<h1 id="intro">Blog</h1>
+    	
     </div>
 
     <!-- Page Content -->
@@ -50,7 +56,6 @@ $(document).ready(function () {
             <!-- Blog Entries Column -->
             <div class="col-md-7">
                <h1 class="page-header">
-					Page Heading
 					<?php
 				   	if(isset($_SESSION['user_role']) && $_SESSION['user_role'] == "subscriber"){
 						echo "<small><a href='new_post.php'>Add New Post</a></small>";
@@ -110,6 +115,8 @@ $(document).ready(function () {
 						$post_image = $row['post_image'];
 						$post_content = substr($row['post_content'], 0, 150);
 						
+						$post_date = date('F j - Y, g:i a', strtotime($post_date));
+						
 						?>
 						
 						
@@ -118,10 +125,10 @@ $(document).ready(function () {
 						<h2 class="post_title text-center">
 							<a href="post.php?p_id=<?php echo $post_id; ?>"><?php echo $post_title ?></a>
 						</h2>
-						<p class="lead">
+						<p class="lead post-info-date">
 							by <a href="author_posts.php?author=<?php echo $post_author; ?>&p_id=<?php echo $post_id; ?>"><?php echo $post_author ?></a>
 						</p>
-						<p><span class="glyphicon glyphicon-time"></span><?php echo $post_date ?></p>
+						<p class="post-info-date">Posted On: <?php echo $post_date ?></p>
 						<hr>
 						<a href="post.php?p_id=<?php echo $post_id; ?>"><img class="img-responsive" src="images/<?php echo $post_image ?>" alt=""></a>
 						<hr>
@@ -161,5 +168,7 @@ $(document).ready(function () {
 			
 			?>
         </ul>
+        
+        
 
         <?php include 'includes/footer.php'; ?>

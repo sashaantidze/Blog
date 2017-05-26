@@ -1,9 +1,3 @@
-/*!
- * Start Bootstrap - Blog Home (http://startbootstrap.com/)
- * Copyright 2013-2016 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
- */
-
 body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
@@ -17,36 +11,105 @@ footer {
 }
 
 #main_bg{
-	background-color:red;
+	background-color:lightblue;
 	background-image: url(../images/06%20-%20November%202016%20.jpg);
 	background-size: cover;
 	height:600px;
 	margin-top: -19px;
 }
 
-#post_bg{
-	background-color:red;
-/*	background-image: url(../images/aug.jpg);*/
+#searchPagebg{
+	background-color:lightblue;
+	background-image: url(../images/search.jpg);
 	background-size: cover;
 	height:600px;
 	margin-top: -19px;
 }
 
+#searchPagebg h1{
+	margin-top: 160px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
+    font-size: 60px;
+    letter-spacing: 0px;
+   	color: #fff;
+	text-shadow: -20px 19px 20px black;
+	
+}
+
+#searchPagebg h1 a{
+	text-decoration: none;
+    color: aquamarine;
+}
+
+#searchPagebg h1 span{
+	color: gold;
+}
+
+#post_bg{
+	background-color:lightblue;
+	background-attachment: fixed;
+	background-size: cover;
+	height:600px;
+	margin-top: -19px;
+}
+
+#searchBox{
+	background: transparent;
+	border: none;
+	padding: 30px;
+	margin-top: 120px;
+}
+
+#searchBox input[type="text"]{
+	padding: 30px;
+	background: rgba(0, 0, 0, 0.5);
+	font-family: 'Poppins', sans-serif;
+	color: #fff;
+}
+
+#searchBox input[placeholder]{
+	font-size: 30px;
+}
+
+#searchBox button{
+	padding: 20px;
+}
+
 #main_bg h1{
 	margin-top: 160px;
-    font-family: serif;
+    font-family: 'Metamorphous', cursive;
     font-weight: 100;
     font-size: 160px;
     letter-spacing: 24px;
-   	color: burlywood;
+   	color: #fff;
+	text-shadow: -20px 19px 20px black;
+	
+}
+
+.col-md-7 .post_title a{
+	font-family: 'Poppins', sans-serif;
+	color: #000;
+}
+
+.col-md-7 .post_title a:hover {
+	text-shadow: 1px 1px 11px black;
+	text-decoration: none;
+	transition: 0.5s;
+}
+
+#postContentText{
+	font-family: 'News Cycle', serif;
+	font-size: 35px;
 }
 
 #post_bg h1{
-    font-family: serif;
+    font-family: 'Fjalla One', sans-serif;
+	color: #fff;
+    text-shadow: -13px 17px 17px black;
     font-weight: 100;
-    font-size: 160px;
-    letter-spacing: 24px;
-   	color: burlywood;
+    font-size: 90px;
+    letter-spacing: -3px;
 }
 
 hr.ruler{
@@ -54,4 +117,25 @@ hr.ruler{
 	margin:15px auto;
 	border-width:4px;
 	border-color:burlywood;
+}
+
+#popularPosts{
+	width: 500px;
+}
+
+#postInfo{
+	background: rgba(0,0,0, 0.5);
+    color: #fff;
+    padding: 5px;
+    box-shadow: 1px 10px 12px 4px black;
+}
+
+.post-info-date{
+	font-family: 'Poppins', sans-serif;
+    color: #000;
+}
+
+#postContent{
+	font-family: 'Poppins', sans-serif;
+    color: #000;
 }

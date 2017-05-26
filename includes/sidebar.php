@@ -19,16 +19,16 @@
                     <h4>Login</h4>
                     <form action="includes/login.php" method="post">
                     	<div class="form-group">
-			<input name="username" placeholder="Username" type="text" class="form-control">
+							<input name="username" placeholder="Username" type="text" class="form-control">
 							
                     	</div>
                     	<div class="input-group">
-				<input name="password" placeholder="Password" type="password" class="form-control">
-				<span class="input-group-btn">
-					<button class="btn btn-primary" name="login" type="submit">
-						Login
-					</button>
-				</span>
+							<input name="password" placeholder="Password" type="password" class="form-control">
+							<span class="input-group-btn">
+								<button class="btn btn-primary" name="login" type="submit">
+									Login
+								</button>
+							</span>
 							
                     	</div>
                     </form>
@@ -70,16 +70,16 @@
 						<div class="well well-sm" id="profile" style="display:none;">
 							<div class="row">
 								<div class="col-sm-6 col-md-4">
-								<?php
+									<?php
 					
-								if(!empty($user_image)){
-									echo "<img src='images/$user_image' alt='' title='Change Photo' width='380' height='500' class='img-rounded img-responsive' data-toggle='modal' data-target='#myModal'>";
-								}
-								else if(empty($user_image)){
-									echo "<img src='http://placehold.it/380x500' alt='' title='Upload Photo' class='img-rounded img-responsive' data-toggle='modal' data-target='#myModal'>";
-								}
+										if(!empty($user_image)){
+											echo "<img src='images/$user_image' alt='' title='Change Photo' width='380' height='500' class='img-rounded img-responsive' data-toggle='modal' data-target='#myModal'>";
+										}
+										else if(empty($user_image)){
+											echo "<img src='http://placehold.it/380x500' alt='' title='Upload Photo' class='img-rounded img-responsive' data-toggle='modal' data-target='#myModal'>";
+										}
 
-								?>
+										?>
 									
 								</div>
 								
@@ -111,7 +111,22 @@
 
 									</div>
 								  </div>
-							
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
 								<div class="col-sm-6 col-md-8">
 									<h4>
 										<?php
@@ -229,44 +244,5 @@
 				
 				?>
                
-
-                <div class="list-group">
-                <h3>Most Viewed Posts</h3>
-						<?php 
-							$sel_side = "SELECT * FROM posts WHERE post_status = 'published' ORDER BY post_views_count DESC LIMIT 5";
-							$run_side = mysqli_query($connection, $sel_side);
-							while($rows = mysqli_fetch_assoc($run_side)){
-								if(isset($_GET['p_id'])){
-									if($_GET['p_id'] == $rows['post_id']){
-										$class = "active";
-									}
-									else{
-										$class = "";
-									}	
-								}
-								else{
-									$class = "";
-								}
-								echo '
-
-									<a href="post.php?p_id='.$rows['post_id'].'" class="list-group-item '.$class.'">
-										<div class="col-sm-4">
-											'.(empty($rows['post_image']) ? 'No image' : '<img src="images/'.$rows['post_image'].'" width="100%">').'
-										</div>
-										<div class="col-sm-8">
-											<h4 class="list-group-item-heading">'.$rows['post_title'].'</h4>
-											<p class="list-group-item-text">'.strip_tags(substr($rows['post_content'], 0, 80)).'...</p>
-										</div>
-										<div style="clear:both;"></div>
-										
-									</a>
-								';
-							}
-						 ?>
-						
-					</div>
-
-                <!-- Side Widget Well -->
-                <?php include "includes/widget.php"; ?>
 
             </div>

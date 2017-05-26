@@ -1,23 +1,35 @@
 <?php include 'includes/db.php'; ?> 
 <?php include 'includes/header.php'; ?>
 <?php include 'includes/navigation.php'; ?>   
-  
-
+ 
     
+
+    <div class="container-fluid text-center" id="searchPagebg">
+    <?php
+		if(isset($_POST['search']) && !empty($_POST['search'])){
+			$search_keyword = $_POST['search'];
+			$search = "Search results for <span>$search_keyword</span>";
+		}
+		else{
+			$search = "Please Enter a Searching Keyword. <a href='index.php'>Search Again</a>";
+		}
+		
+		
+		?>
+    	<h1 id="intro"><?php echo $search; ?></h1>
+ 
+    </div>
 
     <!-- Page Content -->
     <div class="container">
-
+		
         <div class="row">
 
             <!-- Blog Entries Column -->
             <div class="col-md-7">
                 
                 <?php
-				
-				
-				
-				
+	
 				if(isset($_POST['search'])){
 					$search = $_POST['search'];
 					
@@ -35,8 +47,7 @@
 					}
 					else{
 						
-						/*$query = "SELECT * FROM posts";
-						$select_all_posts_query = mysqli_query($connection, $query);*/
+					
 				
 					while($row = mysqli_fetch_assoc($search_query)){
 						
@@ -50,8 +61,7 @@
 						?>
 						
 						<h1 class="page-header">
-							Page Heading
-							<small>Secondary Text</small>
+						
 						</h1>
 						
 						<!-- First Blog Post -->
@@ -78,32 +88,7 @@
 				}
 				?>
 				
-			
-                
-				
-				
-				
-					
-				
-						
-						
-					
-				
-
-                
-                
-                
-                
-
-                
-                
-                
-                
-                
-                
-
-
-                
+	
             </div>
 
             <?php include 'includes/sidebar.php'; ?>

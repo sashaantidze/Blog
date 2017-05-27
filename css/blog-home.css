@@ -1,3 +1,9 @@
+/*!
+ * Start Bootstrap - Blog Home (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
 body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
@@ -87,12 +93,12 @@ footer {
 	
 }
 
-.col-md-7 .post_title a{
+.post_title a{
 	font-family: 'Poppins', sans-serif;
 	color: #000;
 }
 
-.col-md-7 .post_title a:hover {
+.post_title a:hover {
 	text-shadow: 1px 1px 11px black;
 	text-decoration: none;
 	transition: 0.5s;
@@ -106,6 +112,24 @@ footer {
 #post_bg h1{
     font-family: 'Fjalla One', sans-serif;
 	color: #fff;
+    text-shadow: -13px 17px 17px black;
+    font-weight: 100;
+    font-size: 90px;
+    letter-spacing: -3px;
+}
+
+#authorPosts{
+	background-color:lightblue;
+	background-image: url(../images/aug.jpg);
+	background-size: cover;
+	height:600px;
+	margin-top: -19px;
+}
+
+#authorPosts h1{
+    font-family: 'Fjalla One', sans-serif;
+	color: #fff;
+	margin-top: 160px;
     text-shadow: -13px 17px 17px black;
     font-weight: 100;
     font-size: 90px;
@@ -128,6 +152,7 @@ hr.ruler{
     color: #fff;
     padding: 5px;
     box-shadow: 1px 10px 12px 4px black;
+	font-family: 'Poppins', sans-serif;
 }
 
 .post-info-date{
@@ -138,4 +163,17 @@ hr.ruler{
 #postContent{
 	font-family: 'Poppins', sans-serif;
     color: #000;
+	font-size: 20px;
+}
+
+.author_posts{
+	margin-top: 60px;
+}
+
+.author_posts .post{
+	padding-bottom: 20px;
+}
+
+.author_posts .post_title{
+	font-weight: bold;
 }

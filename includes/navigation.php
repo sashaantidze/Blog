@@ -18,7 +18,7 @@
                 <ul class="nav navbar-nav">
                   <li class="dropdown">
 					  <a href="#" class="dropdown-toggle" type="button" data-toggle="dropdown">Categories
-					  <span class="caret"></span></a href="#">
+					  <span class="caret"></span></a>
 					  <ul class="dropdown-menu">
 						<?php
 						  
@@ -33,6 +33,44 @@
 					
 						  
 						  ?>
+					  </ul>
+					  
+					</li>
+                  <li class="dropdown">
+					  <a href="#" class="dropdown-toggle" type="button" data-toggle="dropdown">Popular Posts
+					  <span class="caret"></span></a>
+					  <ul class="dropdown-menu list-group" id="popularPosts">
+						<?php 
+							$sel_side = "SELECT * FROM posts WHERE post_status = 'published' ORDER BY post_views_count DESC LIMIT 5";
+							$run_side = mysqli_query($connection, $sel_side);
+							while($rows = mysqli_fetch_assoc($run_side)){
+								if(isset($_GET['p_id'])){
+									if($_GET['p_id'] == $rows['post_id']){
+										$class = "active";
+									}
+									else{
+										$class = "";
+									}	
+								}
+								else{
+									$class = "";
+								}
+								echo '
+
+									<a href="post.php?p_id='.$rows['post_id'].'" class="list-group-item '.$class.'">
+										<div class="col-sm-4">
+											'.(empty($rows['post_image']) ? 'No image' : '<img src="images/'.$rows['post_image'].'" width="100%">').'
+										</div>
+										<div class="col-sm-8">
+											<h4 class="list-group-item-heading">'.$rows['post_title'].'</h4>
+											<p class="list-group-item-text">'.strip_tags(substr($rows['post_content'], 0, 80)).'...</p>
+										</div>
+										<div style="clear:both;"></div>
+										
+									</a>
+								';
+							}
+						 ?>
 					  </ul>
 					</li>
                    
@@ -55,23 +93,27 @@
 					
 							
 						}
-						?>
-						
-						<li style="padding-left: 320px;">
-							<a href="admin/profile.php"><?php echo "<b>" . $_SESSION['firstname'] . ' ' . $_SESSION['lastname'] . "</b>"; ?> Logged in </a>
-						</li>
-                    <?php
+					
 					}
-					else{
-						print("<li><a href=''>Login</a></li>");
-					}
+					
 					
 					?>
                  
                  	
                   
-          
+          			
                 </ul>
+                <ul class="nav navbar-nav navbar-right">
+				  <li><a href="registration.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+				  <li class="dropdown"><a href="#" class="dropdown-toggle" type="button" data-toggle="dropdown"><span class="glyphicon glyphicon-login"></span>Login</a>
+				  	<ul class="dropdown-menu">
+				  	<li>
+				  		<?php include 'sidebar.php'; ?>
+				  	</li>
+				  		
+				  	</ul>
+				  </li>
+				</ul>
             </div>
            
             <!-- /.navbar-collapse -->

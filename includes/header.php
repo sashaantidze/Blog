@@ -20,6 +20,7 @@
     <link href="css/styles.css" rel="stylesheet">
     <script src="http://cloud.tinymce.com/stable/tinymce.min.js"></script>
     <script src="js/jquery.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Bitter|Fjalla+One|Lobster|Metamorphous|News+Cycle|Poppins|Roboto" rel="stylesheet">
     
     
 

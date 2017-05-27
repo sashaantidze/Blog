@@ -2,17 +2,24 @@
 <?php include 'includes/header.php'; ?>
 <?php include 'includes/navigation.php'; ?>   
 <?php include 'admin/functions.php'; ?> 
-  
 
-    
+   <div class="container-fluid text-center" id="authorPosts">
+    <?php
+		$the_post_author = $_GET['author'];
+		
+		?>
+    	<h1 id="intro">all posts by <?php echo $the_post_author; ?></h1>
+ 
+    </div>
 
     <!-- Page Content -->
     <div class="container">
-
+		
         <div class="row">
 
             <!-- Blog Entries Column -->
-            <div class="col-md-7">
+            <div class="col-md-12 author_posts">
+                
                 
                 <?php
 				
@@ -27,8 +34,10 @@
 				
 					$query = "SELECT * FROM posts WHERE post_author = '{$the_post_author}'";
 					$select_all_posts_query = mysqli_query($connection, $query);
+					$posts_count = mysqli_num_rows($select_all_posts_query);
+					$posts_per_row = $posts_count / 3;
 				
-					print "<h1>All posts by $the_post_author</h1>";
+					
 				
 					while($row = mysqli_fetch_assoc($select_all_posts_query)){
 						
@@ -37,41 +46,31 @@
 						$post_author = $row['post_author'];
 						$post_date = $row['post_date'];
 						$post_image = $row['post_image'];
-						$post_content = substr($row['post_content'], 0, 150);
+						$post_content = substr($row['post_content'], 0, 100);
+						
+						$post_date = date('F j - Y, g:i a', strtotime($post_date));
 						
 						?>
 						
-						<h1 class="page-header">
-							Page Heading
-							<small>Secondary Text</small>
-						</h1>
 						
-						<!-- First Blog Post -->
-						<h2>
-							<a href="post.php?p_id=<?php echo $post_id; ?>"><?php echo $post_title ?></a>
-						</h2>
-						<p class="lead">
-							by <?php echo $post_author ?>
-						</p>
-						<p><span class="glyphicon glyphicon-time"></span><?php echo $post_date ?></p>
-						<hr>
-						<a href="post.php?p_id=<?php echo $post_id; ?>"><img class="img-responsive" src="images/<?php echo $post_image ?>" alt=""></a>
-						<hr>
-						<p><?php echo $post_content ?></p>
-						<a class="btn btn-primary" href="post.php?p_id=<?php echo $post_id; ?>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+							<!-- First Blog Post -->
+							<div class="col-dm-12 post">
+								<h2 class="post_title">
+									<a href="post.php?p_id=<?php echo $post_id; ?>"><?php echo $post_title ?></a>
+								</h2>
 
-						<hr>
+								<div id="postContent"><?php echo $post_content ?></div>
+								<p class="post-info-date">Posted On: <?php echo $post_date ?></p>
+								<hr>
+							</div>
+							
+						
 						
 					<?php }	?>
-				
-					
- 
-
-     
-                
+	
             </div>
 
-            <?php include 'includes/sidebar.php'; ?>
+            <?php //include 'includes/sidebar.php'; ?>
 
         </div>
         <!-- /.row -->

@@ -3,7 +3,6 @@
 <?php include 'includes/navigation.php'; ?>   
 <script>
 $(document).ready(function () {
-	//$('#searchBox').hide();
 	var searchBoxvar = "<div class='well' id='searchBox'>" +
                     "<form action='search.php' method='post'>" +
                     	"<div class='input-group'>" +

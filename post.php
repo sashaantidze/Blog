@@ -97,16 +97,8 @@
 				}
 				
 				?>	
-					
 
-				
-				
-     
-     
-                
             </div>
-
-            <?php //include 'includes/sidebar.php'; ?>
 
         </div>
         <!-- /.row -->

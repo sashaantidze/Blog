@@ -32,14 +32,7 @@
  
  
  <div class="container-fluid text-center" id="post_bg">
-   <script>
-	   $(document).ready(function() {
-		   var image = $('#postImage').attr("src");
-		   //alert(image);
-		   $('#post_bg').css('background-image', 'url('+image+')');
-	   });
-	 
-	 </script>
+
     
     <div class="container" style="margin-top: 160px;">
     	
@@ -50,7 +43,7 @@
     
     
     
-    	<h1 id="intro"><?php echo $post_title; ?></h1>
+    	<h1 id="introP"><?php echo $post_title; ?></h1>
     	<hr class="ruler">
     	<h3>Posted By <?php echo $post_author; ?> On <?php echo $post_date; ?> </h3>
     </div>

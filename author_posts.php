@@ -2,6 +2,9 @@
 <?php include 'includes/header.php'; ?>
 <?php include 'includes/navigation.php'; ?>   
 <?php include 'admin/functions.php'; ?> 
+  
+
+    
 
    <div class="container-fluid text-center" id="authorPosts">
     <?php
@@ -67,10 +70,14 @@
 						
 						
 					<?php }	?>
-	
+				
+					
+				
+
+     
+                
             </div>
 
-            <?php //include 'includes/sidebar.php'; ?>
 
         </div>
         <!-- /.row -->

@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+<?php include("includes/login_modal.php"); ?>
 
    <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -104,14 +105,19 @@
           			
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-				  <li><a href="registration.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-				  <li class="dropdown"><a href="#" class="dropdown-toggle" type="button" data-toggle="dropdown"><span class="glyphicon glyphicon-login"></span>Login</a>
-				  	<ul class="dropdown-menu">
-				  	<li>
-				  		<?php include 'sidebar.php'; ?>
-				  	</li>
-				  		
-				  	</ul>
+				  
+				  <li class="dropdown">
+				  	<?php
+					  if(!isset($_SESSION['username'])){
+						  echo "<a href='#' data-toggle='modal' data-target='#login-modal'>Login/Sign Up <span class='glyphicon glyphicon-user'></span></a>";
+					  }
+					  else{
+						  echo "<a href='includes/logout.php'>Logout</a>";
+					  }
+					  
+					  ?>
+				  	
+				
 				  </li>
 				</ul>
             </div>

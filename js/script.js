@@ -32,4 +32,10 @@ $(document).ready(function () {
 		
 	});
 	
+	 $(document).ready(function() {
+		   var image = $('#postImage').attr("src");
+		   //alert(image);
+		   $('#post_bg').css('background-image', 'url('+image+')');
+	   });
+	
 });

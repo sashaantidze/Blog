@@ -1,35 +1,6 @@
 <?php include 'includes/db.php'; ?> 
 <?php include 'includes/header.php'; ?>
 <?php include 'includes/navigation.php'; ?>   
-<script>
-$(document).ready(function () {
-	var searchBoxvar = "<div class='well' id='searchBox'>" +
-                    "<form action='search.php' method='post'>" +
-                    	"<div class='input-group'>" +
-							"<input name='search' placeholder='Search Blog' type='text' class='form-control'>" +
-							"<span class='input-group-btn'>" +
-								"<button name='submit' class='btn btn-default' type='submit'>" +
-									"<span class='glyphicon glyphicon-search'></span>" +
-								"</button>" +
-                        	"</span>" +
-                    	"</div>" +
-                    "</form>" +
-              
-               " </div>	";
-
-	$(window).on('load', function () {
-			$('#intro').delay(1000).fadeOut('medium', function () {
-				$('#searchBox').append(searchBoxvar).hide().fadeIn('fast');
-			});
-		
-		});
-		
-	});
-	
-	
-
-</script>  
-    
 
     <div class="container-fluid text-center" id="main_bg">
     	<h1 id="intro">The Blog</h1>
@@ -38,13 +9,7 @@ $(document).ready(function () {
     		
     	</div>
     </div>
-    
-    
-    
-    
-    
-    
-    	
+
     </div>
 
     <!-- Page Content -->
@@ -59,14 +24,9 @@ $(document).ready(function () {
 				   	if(isset($_SESSION['user_role']) && $_SESSION['user_role'] == "subscriber"){
 						echo "<small><a href='new_post.php'>Add New Post</a></small>";
 					}
-				   
-				   
-				   
+				
 				   	?>
-					
-					
-					
-							
+						
 				</h1>
                 
                 <?php
@@ -141,8 +101,6 @@ $(document).ready(function () {
 						
 			
             </div>
-
-            <?php include 'includes/sidebar.php'; echo $_SERVER['HTTP_HOST']; ?>
 
         </div>
         <!-- /.row -->

@@ -2,11 +2,7 @@
 <?php include 'includes/header.php'; ?>
 <?php include 'includes/navigation.php'; ?>   
 <?php include 'admin/functions.php'; ?> 
-  
-
-    
-
-   <div class="container-fluid text-center" id="authorPosts">
+<div class="container-fluid text-center" id="authorPosts">
     <?php
 		$the_post_author = $_GET['author'];
 		
@@ -70,12 +66,7 @@
 						
 						
 					<?php }	?>
-				
-					
-				
 
-     
-                
             </div>
 
 
